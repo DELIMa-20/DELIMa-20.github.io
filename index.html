@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valentin App – Free Google SERP Checker</title>
+  <meta name="description" content="Valentin App is a free Google SERP Checker. See real Google results from 195+ countries instantly. No VPN needed."/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #0f0f0f;
+      color: #e8e8e8;
+    }
+
+    a { text-decoration: none; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 5%;
+      border-bottom: 1px solid #1e1e1e;
+      position: sticky;
+      top: 0;
+      background: #0f0f0f;
+      z-index: 99;
+    }
+
+    .logo { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .logo span { color: #e8392a; }
+
+    .nav-btn {
+      background: #e8392a;
+      color: #fff;
+      padding: 9px 22px;
+      border-radius: 6px;
+      font-size: .88rem;
+      font-weight: 600;
+      transition: background .2s;
+    }
+    .nav-btn:hover { background: #c72d1f; }
+
+    .hero {
+      text-align: center;
+      padding: 80px 5% 70px;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(232,57,42,.12);
+      border: 1px solid rgba(232,57,42,.3);
+      color: #e8392a;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      max-width: 700px;
+      margin: 0 auto 18px;
+    }
+
+    .hero h1 em { font-style: normal; color: #e8392a; }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #888;
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero p a { color: #4caf6e; font-weight: 500; }
+
+    .hero-btn {
+      display: inline-block;
+      background: #e8392a;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background .2s, transform .2s;
+    }
+    .hero-btn:hover { background: #c72d1f; transform: translateY(-2px); }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 48px 5%;
+      border-bottom: 1px solid #1e1e1e;
+      flex-wrap: wrap;
+    }
+
+    .stat { text-align: center; }
+    .stat-n { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .stat-n span { color: #4caf6e; }
+    .stat-l { font-size: .82rem; color: #555; }
+
+    .wrap {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 70px 5%;
+    }
+
+    .wrap-dark {
+      background: #0a0a0a;
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .sec-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 36px;
+      text-align: center;
+    }
+    .sec-title span { color: #e8392a; }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .step {
+      background: #161616;
+      border: 1px solid #242424;
+      border-radius: 10px;
+      padding: 28px 24px;
+    }
+
+    .step-num {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: rgba(232,57,42,.15);
+      border: 1px solid rgba(232,57,42,.3);
+      color: #e8392a;
+      font-weight: 700;
+      font-size: .85rem;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .step h3 { font-size: .97rem; font-weight: 600; color: #fff; margin-bottom: 8px; }
+    .step p  { font-size: .86rem; color: #666; line-height: 1.65; }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .feat {
+      background: #161616;
+      border: 1px solid #242424;
+      border-radius: 10px;
+      padding: 22px 20px;
+    }
+
+    .feat-icon { font-size: 1.4rem; margin-bottom: 10px; }
+    .feat h3 { font-size: .92rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .feat p  { font-size: .82rem; color: #666; line-height: 1.6; }
+
+    .uc-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .uc {
+      background: #161616;
+      border: 1px solid #242424;
+      border-radius: 10px;
+      padding: 22px;
+      display: flex;
+      gap: 14px;
+    }
+
+    .uc-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #4caf6e;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    .uc h3 { font-size: .93rem; font-weight: 600; color: #fff; margin-bottom: 6px; }
+    .uc p  { font-size: .82rem; color: #666; line-height: 1.6; }
+
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .faq-item {
+      background: #161616;
+      border: 1px solid #242424;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      padding: 16px 20px;
+      font-size: .93rem;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+
+    .faq-q span { color: #e8392a; font-size: 1.1rem; transition: transform .3s; }
+    .faq-item.open .faq-q span { transform: rotate(45deg); }
+
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a p { padding: 0 20px 16px; font-size: .86rem; color: #666; line-height: 1.7; }
+
+    .cta {
+      text-align: center;
+      padding: 80px 5%;
+    }
+
+    .cta h2 { font-size: 1.8rem; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .cta p  { font-size: .98rem; color: #666; margin-bottom: 30px; }
+
+    .cta-btn {
+      display: inline-block;
+      background: #4caf6e;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background .2s, transform .2s;
+    }
+    .cta-btn:hover { background: #3d9459; transform: translateY(-2px); }
+
+    footer {
+      padding: 28px 5%;
+      border-top: 1px solid #1e1e1e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer p { font-size: .8rem; color: #444; }
+    footer a { color: #e8392a; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 768px) {
+      .steps, .features-grid { grid-template-columns: 1fr; }
+      .uc-grid { grid-template-columns: 1fr; }
+      .stats { gap: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="https://valentinapp.org/" class="logo">Valentin<span>App</span></a>
+  <a href="https://valentinapp.org/" class="nav-btn">Try Free →</a>
+</nav>
+
+<div class="hero">
+  <div class="badge">Free · 195+ Countries · No VPN Needed</div>
+  <h1>Free Google <em>SERP Checker</em><br/>for Any Country</h1>
+  <p>
+    <a href="https://valentinapp.org/">Valentin App</a> shows you real Google search results from 195+ countries — instantly, no VPN, no proxy, no sign-up required.
+  </p>
+  <a href="https://valentinapp.org/" class="hero-btn">Check SERP Now — Free</a>
+</div>
+
+<div class="stats">
+  <div class="stat">
+    <div class="stat-n">195<span>+</span></div>
+    <div class="stat-l">Countries Supported</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">100<span>%</span></div>
+    <div class="stat-l">Real Google Results</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">Free<span>.</span></div>
+    <div class="stat-l">No Sign-up</div>
+  </div>
+  <div class="stat">
+    <div class="stat-n">0<span>s</span></div>
+    <div class="stat-l">Setup Time</div>
+  </div>
+</div>
+
+<div style="border-bottom:1px solid #1e1e1e;">
+  <div class="wrap">
+    <h2 class="sec-title">How <span>Valentin App</span> Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Enter Your Keyword</h3>
+        <p>Type any query. Google Autocomplete suggestions appear in real-time — powered by Google's own API — to help discover high-volume keywords in your target market.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Select a Country</h3>
+        <p>Pick from 195+ countries. Uses Google's official <code style="color:#4caf6e;background:#1c1c1c;padding:1px 5px;border-radius:3px;">gl</code> parameter to simulate a local search — no VPN or proxy needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>See Real Results</h3>
+        <p>Google opens in a new tab showing exactly what local users see — live, no cache, no personalisation filters.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap-dark">
+  <div class="wrap">
+    <h2 class="sec-title">What's Inside <span>Valentin App</span></h2>
+    <div class="features-grid">
+      <div class="feat">
+        <div class="feat-icon">🗺️</div>
+        <h3>195+ Countries</h3>
+        <p>Full global coverage — US, UK, Germany, Japan, India, Brazil, and every major market worldwide.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">⚡</div>
+        <h3>Real-Time, No Cache</h3>
+        <p>Results come directly from Google via the <code style="color:#4caf6e">gl</code> parameter — always live, never a stored snapshot.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">💡</div>
+        <h3>Google Autocomplete</h3>
+        <p>Live suggestions from Google's own Autocomplete API as you type — great for keyword discovery.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🚫</div>
+        <h3>No VPN Needed</h3>
+        <p>Works from any browser, anywhere. Google's official geo-location parameter handles everything.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🆓</div>
+        <h3>Always Free</h3>
+        <p>No account, no credit card, no rate limits. Open the tool and start checking SERPs immediately.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔍</div>
+        <h3>SERP Features</h3>
+        <p>See featured snippets, local packs, and knowledge panels exactly as they appear per country.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="border-bottom:1px solid #1e1e1e;">
+  <div class="wrap">
+    <h2 class="sec-title">Who Uses <span>Valentin App</span></h2>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-dot"></div>
+        <div>
+          <h3>International SEO</h3>
+          <p>A keyword at #1 in the US may not rank on page 1 in Germany or Japan. Check every country that matters to your strategy.</p>
+        </div>
+      </div>
+      <div class="uc">
+        <div class="uc-dot"></div>
+        <div>
+          <h3>Local SEO Research</h3>
+          <p>See local packs, map results, and region-specific content Google surfaces for your keywords in each market.</p>
+        </div>
+      </div>
+      <div class="uc">
+        <div class="uc-dot"></div>
+        <div>
+          <h3>Competitor Analysis</h3>
+          <p>Monitor how competitors rank locally across countries and find gaps in your content strategy per region.</p>
+        </div>
+      </div>
+      <div class="uc">
+        <div class="uc-dot"></div>
+        <div>
+          <h3>hreflang Validation</h3>
+          <p>Confirm the right language/country variant of your page appears in each target locale after implementation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap-dark">
+  <div class="wrap">
+    <h2 class="sec-title">Frequently Asked <span>Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">What is a Google SERP Checker? <span>+</span></div>
+        <div class="faq-a"><p>A Google SERP Checker lets you view search results as they appear for users in a specific country. Since Google personalises results based on your IP, what you see may differ from users elsewhere. Valentin App solves this using Google's official geo-location parameters across 195+ countries.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Do I need a VPN to use Valentin App? <span>+</span></div>
+        <div class="faq-a"><p>No. Valentin App uses Google's official <code style="color:#4caf6e">gl</code> URL parameter to simulate searches from any country — no VPN, proxy, or browser extension needed.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Are the results live or from a database? <span>+</span></div>
+        <div class="faq-a"><p>100% live. The tool constructs a real Google search URL with the correct geo-location parameter and opens it in your browser — no caching, always current.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">Is Valentin App completely free? <span>+</span></div>
+        <div class="faq-a"><p>Yes — completely free. No account, no sign-up, no credit card. Visit valentinapp.org and start checking SERPs right away.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta">
+  <h2>Start Checking SERPs Today</h2>
+  <p>Free, instant, no sign-up — see real Google results from any country.</p>
+  <a href="https://valentinapp.org/" class="cta-btn">Open Valentin App Free →</a>
+</div>
+
+<footer>
+  <p>© 2025 <a href="https://valentinapp.org/">Valentin App</a> — Free Google SERP Checker</p>
+  <p>Built for SEO professionals 🌍</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
