@@ -260,6 +260,86 @@
     }
     .cta-btn:hover { background: #3d9459; transform: translateY(-2px); }
 
+    /* ── COMMUNITY LINKS SECTION ── */
+    .community-section {
+      border-top: 1px solid #1e1e1e;
+      border-bottom: 1px solid #1e1e1e;
+      padding: 52px 5%;
+      background: #0a0a0a;
+    }
+
+    .community-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .community-section .sec-title {
+      margin-bottom: 12px;
+    }
+
+    .community-subtitle {
+      text-align: center;
+      font-size: .86rem;
+      color: #444;
+      margin-bottom: 36px;
+    }
+
+    .community-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .community-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #131313;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 13px 16px;
+      color: #aaa;
+      font-size: .82rem;
+      font-weight: 500;
+      transition: border-color .2s, color .2s, background .2s;
+      overflow: hidden;
+    }
+
+    .community-link:hover {
+      border-color: #e8392a;
+      color: #fff;
+      background: #181818;
+    }
+
+    .community-link-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 5px;
+      background: #1e1e1e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .8rem;
+      flex-shrink: 0;
+    }
+
+    .community-link-text {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    @media (max-width: 768px) {
+      .steps, .features-grid { grid-template-columns: 1fr; }
+      .uc-grid { grid-template-columns: 1fr; }
+      .stats { gap: 28px; }
+      .community-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .community-grid { grid-template-columns: 1fr; }
+    }
+
     footer {
       padding: 28px 5%;
       border-top: 1px solid #1e1e1e;
@@ -273,12 +353,6 @@
     footer p { font-size: .8rem; color: #444; }
     footer a { color: #e8392a; }
     footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 768px) {
-      .steps, .features-grid { grid-template-columns: 1fr; }
-      .uc-grid { grid-template-columns: 1fr; }
-      .stats { gap: 28px; }
-    }
   </style>
 </head>
 <body>
@@ -433,6 +507,82 @@
         <div class="faq-q">Is Valentin App completely free? <span>+</span></div>
         <div class="faq-a"><p>Yes — completely free. No account, no sign-up, no credit card. Visit valentinapp.org and start checking SERPs right away.</p></div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── COMMUNITY RESOURCES SECTION ── -->
+<div class="community-section">
+  <div class="community-inner">
+    <h2 class="sec-title">Trusted by the <span>SEO Community</span></h2>
+    <p class="community-subtitle">Guides, discussions, and resources shared by SEO practitioners using tools like Valentin App.</p>
+    <div class="community-grid">
+
+      <a href="https://sites.google.com/view/ditosimreg" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🌐</div>
+        <span class="community-link-text">DITO SIM Registration Guide</span>
+      </a>
+
+      <a href="https://www.producthunt.com/products/dito-sim-registration" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🚀</div>
+        <span class="community-link-text">Product Hunt – DITO SIM Registration</span>
+      </a>
+
+      <a href="https://medium.com/@wajahatmahmood65/10-best-podcasts-about-sim-registration-in-the-philippines-2026-2f23ac414fcd" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">✍️</div>
+        <span class="community-link-text">Top Podcasts on SIM Registration (Medium)</span>
+      </a>
+
+      <a href="https://creators.spotify.com/pod/profile/jamie0404/episodes/DITO-SIM-Registration-2025-e3bi80k" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🎙️</div>
+        <span class="community-link-text">DITO SIM Registration 2025 – Podcast</span>
+      </a>
+
+      <a href="https://edu.lu.lv/mod/forum/discuss.php?d=190542" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🎓</div>
+        <span class="community-link-text">University Forum Discussion</span>
+      </a>
+
+      <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOh2vy3CNibsdar6YQktfSoMqVI7PGXKeumrdiHX6mdpQRnNVV0v-sqDRr6eeCgFxZ8Txb49Nc1YaR/pubhtml" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">📊</div>
+        <span class="community-link-text">SIM Registration Data Sheet</span>
+      </a>
+
+      <a href="https://ditosimregistration.amebaownd.com/posts/58709972" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">📝</div>
+        <span class="community-link-text">DITO Registration Step-by-Step</span>
+      </a>
+
+      <a href="https://writeupcafe.com/how-to-activate-dito-sim-in-3-easy-steps" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">☕</div>
+        <span class="community-link-text">How to Activate DITO SIM – WriteUpCafe</span>
+      </a>
+
+      <a href="https://groups.google.com/g/dito-sim-egistration/c/6Kfjewcmn7E" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">💬</div>
+        <span class="community-link-text">Google Groups – DITO SIM Discussion</span>
+      </a>
+
+      <a href="https://dai.ly/xa66088" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🎬</div>
+        <span class="community-link-text">DITO Registration – Dailymotion Video</span>
+      </a>
+
+      <a href="https://youtu.be/bmdL_lZRHKw?si=VVH9dMY2VG7LcaH7" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">▶️</div>
+        <span class="community-link-text">DITO SIM Guide – YouTube Tutorial</span>
+      </a>
+
+      <a href="https://royalblue-cormorant-628787.hostingersite.com/sim-registration-systems/" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">🔗</div>
+        <span class="community-link-text">SIM Registration Systems Overview</span>
+      </a>
+
+      <a href="https://www.yumpu.com/en/document/view/71013793/dito-sim-registration-guide" class="community-link" target="_blank" rel="dofollow">
+        <div class="community-link-icon">📄</div>
+        <span class="community-link-text">DITO SIM Registration Guide – Yumpu</span>
+      </a>
+
     </div>
   </div>
 </div>
